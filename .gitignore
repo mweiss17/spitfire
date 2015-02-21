@@ -1,0 +1,4 @@
+/.vagrant
+/static
+*.pyc
+/spitfire/settings/local.py
