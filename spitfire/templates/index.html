@@ -1,19 +1,246 @@
 <html>
+
+	<head>
+		<title>Spitfire</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		<!-- Spitfire's general stylesheet -->
+		<link rel="stylesheet" href="style.css" title="Style" type="text/css" media="screen" charset="utf-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		
+	
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/sortable/resources/demos/style.css">
+
+  
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
+
+  
+
+  		
+	</head>
+
+	<body>
+
+	
+	<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Spitfire</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Leave room.</a></li>
+          </ul>
+          
+          
+          <form class="navbar-form navbar-left">
+	          
+	       
+            <input type="text" class="form-control" placeholder="Search...">
+           		 <div class="list-group navbar-fixed-top col-md-4" id="search-list">
+	           		 
+		   		 	<a href="#" class="list-group-item ">
+			   		 	<img class="media-object" src="..." alt="...">
+			   		 	<h4 class="list-group-item-heading">Artist name - Title</h4>
+  					</a>
+				
+		   		 	<a href="#" class="list-group-item">
+			   		 	<img class="media-object" src="..." alt="...">
+			   		 	<h4 class="list-group-item-heading">Artist name - Title</h4>
+  					</a>
+				</div>
+          </form>
+          
+          
+        </div>
+      </div>
+    </nav>
+	
+	
+
+	
+	<div class="container-fluid">
+      <div class="row">
+	    <div class="col-xs-6">
+		    
+		   
+
+
+		    
+		  	<ul id="sortable" class="list-group">
+            
+            	<li class="list-group-item">Playlist</li>
+				<li class="list-group-item" id="song-1"><span class="glyphicon glyphicon-menu-hamburger"></span> This is the first song! - Artist name <span class="glyphicon glyphicon-remove-circle" id="rm-1"></span></li>
+				<li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger"></span> Song title - Artist name <span class="glyphicon glyphicon-remove-circle"></span></li>
+				<li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger"></span> Song title - Artist name <span class="glyphicon glyphicon-remove-circle"></span></li>
+				<li class="list-group-item"><span class="glyphicon glyphicon-menu-hamburger"></span> Song title - Artist name <span class="glyphicon glyphicon-remove-circle"></span></li>
+                
+			</ul>
+		
+	
+		
+		<script>
+$('#rm-1').click(function(){
+        $('#song-1').remove();
+    });
+</script>
+		
+		
+		</div>
+		<div class="col-xs-6"></div>
+      </div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="container-fluid">
+      <div class="row">
+	  	<div class="chatroom panel panel-default">
+		  	
+			<div class="chatroom-header panel-heading">
+				<span class="chatroom-header-title">Martin's House</span>
+				<span class="badge">2</span>
+				<span class="chatroom-header-minimize caret" ></span>
+			</div>
+			<div class="chatroom-content panel-body">
+				<div class"chatroom-content-user-messages">
+					<span class="chatroom-content-user-messages-profile media-object img-circle"></span>
+					<div class="chatroom-content-user-messages-words bg-info">Hello dog.</div>
+					<div class="chatroom-content-user-messages-meta">Feb 21 @ 6:10 PM</div>
+				
+				</div>
+				<div class"chatroom-content-your-messages ">
+					<div class="chatroom-content-your-messages-words bg-success">Hi cat.</div>
+					<div class="chatroom-content-your-messages-meta">Feb 21 @ 6:11 PM</div>
+				
+				</div>
+			</div>
+			<form class="chatroom-form panel-body">
+				<input class="chatroom-form-input" placeholder="Type what you want to say here.">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">Go!</button>
+				</span>
+			</form>
+		
+		</div>
+      </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-4"></div>
+			<div class="col-md-4">
+	  
+	  			<div class="controls">
+	  				<span class="control-previous glyphicon glyphicon-backward"></span>
+	  				<span class="control-pause glyphicon glyphicon-pause"></span>
+	  				<span class="control-next glyphicon glyphicon-forward"></span>
+				</div>
+	  
+  			</div>
+  		<div class="col-md-4"></div>
+	</div>
+
 <form method="post" action="">
 {%csrf_token%}
 {{search_form}}
-<!--{% for result in results %}-->
-
-<!--<a href="http://www.youtube.com/">{{result}}</a>-->
-<!--{% endfor %}-->
 <button>Submit</button>
 </form>
-{% for title in track_titles %}
+
+<!--div tag gets replaced with the player from our script-->
+<div id="player"></div>
+
+    <script>
+      // Create an iFrame and load the player
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // After API code downloads above, display the iFrame and generate list of songs from the query
+      var songs_from_query = [];
+    //Create a list of songs from django
+    {% for title in track_titles %}
+		{% for code in result_codes %}
+			{% if forloop.counter == forloop.parentloop.counter %}
+				songs_from_query.push({track: "{{title}}", url: "{{code}}"});
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '200',
+          width: '200',
+          videoId: songs_from_query[0].url,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      player.startVideo();
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      //  The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //   //setTimeout(stopVideo, 6000);
+        //   done = true;
+        // }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      
+    </script>
+
+<!-- {% for title in track_titles %}
 	{% for code in result_codes %}
 		{% if forloop.counter == forloop.parentloop.counter %}
 			<a href="http://youtube.com/watch?v={{code}}">{{title}}</a> <br>
+			<iframe width="425" height="349" src="http://www.youtube.com/embed/{{result_codes.0}}" frameborder="0" allowfullscreen></iframe><br>
+
+<script type="text/javascript"> 
+   var url_code = "{{code|safe}}"
+   loadVideoById({'videoId': '{{code}}', 'startSeconds': 5, 'endSeconds': 60, 'suggestedQuality': 'large'});
+</script>
+
+			
 		{% endif %}
 	{% endfor %}
-{% endfor %}
-
+{% endfor %} -->
+	
+	</body>
 </html>
