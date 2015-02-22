@@ -1,4 +1,5 @@
 /.vagrant
 /static
 *.pyc
+Vagrantfile
 /spitfire/settings/local.py
