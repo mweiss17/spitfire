@@ -22,7 +22,7 @@ def youtube_search(query):
   search_response = youtube.search().list(
     q=query,
     part="id,snippet",
-    maxResults=25
+    maxResults=5
   ).execute()
 
   videos = []
@@ -42,11 +42,12 @@ def youtube_search(query):
       playlists.append("%s (%s)" % (search_result["snippet"]["title"],
                                     search_result["id"]["playlistId"]))
 
-  return videos
+  print "whatever2"
+  print "Videos:\n", "\n".join(videos), "\n"
 
 
 if __name__ == "__main__":
-
+  print "whatever"
   try:
     youtube_search("McGill")
   except HttpError, e:
