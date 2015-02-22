@@ -1,0 +1,19 @@
+<html>
+<form method="post" action="">
+{%csrf_token%}
+{{search_form}}
+<!--{% for result in results %}-->
+
+<!--<a href="http://www.youtube.com/">{{result}}</a>-->
+<!--{% endfor %}-->
+<button>Submit</button>
+</form>
+{% for title in track_titles %}
+	{% for code in result_codes %}
+		{% if forloop.counter == forloop.parentloop.counter %}
+			<a href="http://youtube.com/watch?v={{code}}">{{title}}</a> <br>
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+
+</html>
