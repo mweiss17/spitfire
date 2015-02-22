@@ -1,4 +1,8 @@
 <html>
-text
+<form method="post" action="">
+{%csrf_token%}
 {{search_form}}
+{{query}}
+<button>Submit</button>
+</form>
 </html>
